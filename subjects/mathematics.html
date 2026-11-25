@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathematics | Sudip Education Zone</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#080b18;color:#f5f6ff;line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{padding:20px 6%;background:#11182b;border-bottom:1px solid #27334e}
+.logo{font-size:19px;font-weight:bold}
+.logo span{color:#8b9fff}
+.container{width:88%;max-width:1050px;margin:auto}
+.hero{text-align:center;padding:75px 15px;background:radial-gradient(circle at top,#5142a544,transparent 65%)}
+.icon{font-size:55px}
+.hero h1{font-size:38px;margin:12px 0}
+.gradient{background:linear-gradient(90deg,#86a2ff,#c38aff);background-clip:text;color:transparent}
+.hero p{color:#aab5cc}
+.btn{display:inline-block;margin-top:20px;padding:11px 20px;background:#667fff;border-radius:9px;font-weight:bold}
+section{padding:45px 0}
+.heading{text-align:center;margin-bottom:25px}
+.heading h2{font-size:27px}
+.heading p{color:#9eabc3}
+.search{width:100%;padding:14px;background:#131d32;color:white;border:1px solid #344365;border-radius:10px;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{background:#141e34;border:1px solid #293956;padding:22px;border-radius:14px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#8197ff}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{color:#aab5cc;font-size:14px}
+.label{display:inline-block;color:#9db0ff;font-size:12px;margin-bottom:8px}
+.empty{color:#aab5cc;text-align:center;padding:20px;display:none}
+.note{background:#171f38;border:1px solid #3a4b73;border-radius:12px;padding:20px;margin-top:30px}
+footer{text-align:center;padding:30px;color:#9eabc3;border-top:1px solid #26334d}
+@media(max-width:500px){.hero h1{font-size:30px}.container{width:92%}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SUDIP <span>EDUCATION ZONE</span></div>
+</header>
+
+<div class="hero">
+  <div class="icon">📐</div>
+  <h1><span class="gradient">Mathematics</span></h1>
+  <p>Understand Concepts. Master Formulas. Solve Problems.</p>
+  <a href="../index.html" class="btn">← Back to Home</a>
+</div>
+
+<main class="container">
+<section>
+  <div class="heading">
+    <h2>Mathematics Learning Library</h2>
+    <p>Explore mathematics topics and learning materials.</p>
+  </div>
+
+  <input class="search" id="search"
+  type="search" placeholder="Search mathematics topics..."
+  oninput="filterTopics()">
+
+  <div class="grid" id="topics">
+
+    <div class="card">
+      <span class="label">UNIT 01</span>
+      <h3>📘 Calculus</h3>
+      <p>Limits, continuity, differentiation and integration.</p>
+    </div>
+
+    <div class="card">
+      <span class="label">UNIT 02</span>
+      <h3>📗 Algebra</h3>
+      <p>Equations, matrices, determinants and sequences.</p>
+    </div>
+
+    <div class="card">
+      <span class="label">UNIT 03</span>
+      <h3>📙 Trigonometry</h3>
+      <p>Identities, functions and trigonometric equations.</p>
+    </div>
+
+    <div class="card">
+      <span class="label">UNIT 04</span>
+      <h3>📕 Coordinate Geometry</h3>
+      <p>Lines, circles and conic sections.</p>
+    </div>
+
+    <div class="card">
+      <span class="label">UNIT 05</span>
+      <h3>📐 Vectors</h3>
+      <p>Vector algebra and applications.</p>
+    </div>
+
+    <div class="card">
+      <span class="label">UNIT 06</span>
+      <h3>📊 Statistics</h3>
+      <p>Data, probability and statistical methods.</p>
+    </div>
+
+  </div>
+
+  <p class="empty" id="empty">No matching topics found.</p>
+
+  <div class="note">
+    <h3>📚 Study Materials</h3>
+    <p>Study notes and PDF materials will be added here soon.</p>
+    <p style="color:#91a5ff;margin-top:8px">
+      Coming Soon — Stay Connected!
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>Sudip Education Zone</strong>
+  <p>Learn Better. Build Your Future.</p>
+  <p>© 2026 All Rights Reserved.</p>
+</footer>
+
+<script>
+function filterTopics(){
+  const value=document.getElementById("search").value.toLowerCase();
+  const cards=document.querySelectorAll("#topics .card");
+  let count=0;
+
+  cards.forEach(card=>{
+    const match=card.innerText.toLowerCase().includes(value);
+    card.style.display=match?"":"none";
+    if(match) count++;
+  });
+
+  document.getElementById("empty").style.display=
+    count===0?"block":"none";
+}
+</script>
+</body>
+</html>
