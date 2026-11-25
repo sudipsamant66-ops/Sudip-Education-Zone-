@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chemistry | Sudip Education Zone</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#080b18;color:#f5f6ff;line-height:1.7}
+header{padding:20px 6%;background:#11182b}
+.logo{font-size:19px;font-weight:bold}
+.logo span{color:#90a5ff}
+.container{width:90%;max-width:1050px;margin:auto}
+.hero{text-align:center;padding:70px 15px;background:radial-gradient(circle at top,#6c3c8b66,transparent 65%)}
+.hero .emoji{font-size:55px}
+h1{font-size:38px;margin:12px}
+.hero p,.card p{color:#aab5cc}
+.btn{display:inline-block;background:#8a62db;padding:11px 20px;border-radius:9px;color:white;text-decoration:none;margin-top:20px}
+section{padding:45px 0}
+.heading{text-align:center;margin-bottom:25px}
+.search{width:100%;padding:14px;background:#141e34;color:white;border:1px solid #344365;border-radius:10px;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:17px}
+.card{background:#141e34;border:1px solid #293956;padding:22px;border-radius:14px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#b18bff}
+.card h3{margin:8px 0}
+.card p{font-size:14px}
+.unit{color:#b69aff;font-size:12px}
+.notice{background:#171f38;border:1px solid #394b70;border-radius:12px;padding:20px;margin-top:28px}
+footer{text-align:center;padding:30px;color:#aab5cc;border-top:1px solid #293956}
+.empty{display:none;text-align:center;color:#aab5cc}
+@media(max-width:500px){h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header><div class="logo">SUDIP <span>EDUCATION ZONE</span></div></header>
+
+<div class="hero">
+<div class="emoji">🧪</div>
+<h1>Chemistry</h1>
+<p>Explore Chemical Science and Engineering Applications.</p>
+<a href="../index.html" class="btn">← Back to Home</a>
+</div>
+
+<main class="container">
+<section>
+<div class="heading">
+<h2>Chemistry Learning Library</h2>
+<p>Learn chemical concepts and applications.</p>
+</div>
+
+<input class="search" id="search" placeholder="Search Chemistry topics..." type="search">
+
+<div class="grid" id="topics">
+<div class="card"><span class="unit">UNIT 01</span><h3>Atomic Structure</h3><p>Atoms, electrons and electronic configuration.</p></div>
+<div class="card"><span class="unit">UNIT 02</span><h3>Chemical Bonding</h3><p>Ionic, covalent and metallic bonding.</p></div>
+<div class="card"><span class="unit">UNIT 03</span><h3>Electrochemistry</h3><p>Electrochemical cells and applications.</p></div>
+<div class="card"><span class="unit">UNIT 04</span><h3>Water Chemistry</h3><p>Hardness, treatment and water quality.</p></div>
+<div class="card"><span class="unit">UNIT 05</span><h3>Corrosion</h3><p>Types, causes and prevention of corrosion.</p></div>
+<div class="card"><span class="unit">UNIT 06</span><h3>Polymers</h3><p>Polymer properties and applications.</p></div>
+<div class="card"><span class="unit">UNIT 07</span><h3>Fuels</h3><p>Fuel classification and calorific value.</p></div>
+<div class="card"><span class="unit">UNIT 08</span><h3>Environmental Chemistry</h3><p>Pollution and environmental protection.</p></div>
+</div>
+
+<p class="empty" id="empty">No topics found.</p>
+<div class="notice"><h3>📚 Chemistry Materials</h3><p>Notes and PDF materials will be added soon.</p></div>
+</section>
+</main>
+
+<footer><strong>Sudip Education Zone</strong><p>Learn Better. Build Your Future.</p>© 2026</footer>
+
+<script>
+document.getElementById("search").addEventListener("input",function(){
+let count=0;
+document.querySelectorAll(".card").forEach(card=>{
+let match=card.innerText.toLowerCase().includes(this.value.toLowerCase());
+card.style.display=match?"":"none";
+if(match)count++;
+});
+document.getElementById("empty").style.display=count?"none":"block";
+});
+</script>
+</body>
+</html>
